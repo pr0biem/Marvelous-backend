@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "shortid": "^2.2.16"
+  },
+  "name": "marvelous-backend",
+  "version": "1.0.0",
+  "description": "Node/Express.js backend for Marvelous todo list application",
+  "main": "marvelous.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node marvelous.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pr0biem/Marvelous-backend.git"
+  },
+  "author": "Coleson Luterbach",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pr0biem/Marvelous-backend/issues"
+  },
+  "homepage": "https://github.com/pr0biem/Marvelous-backend#readme"
+}
