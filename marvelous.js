@@ -33,7 +33,6 @@ app.post('/tasks', (req, res) => {
         }
 
         const tasks = JSON.parse(data);
-        console.log(tasks);
         const newTask = {
             id: shortId.generate(),
             description: req.body.description,
@@ -55,8 +54,6 @@ app.post('/tasks', (req, res) => {
 });
 
 app.put('/tasks/:id', (req, res) => {
-    console.log("putting")
-    console.log(req.params)
     fs.readFile('./tasks.json', 'utf8', (err, data) => {
         if (err) {
             return res.status(500).json({error: 'Error reading tasks file' });
@@ -65,9 +62,6 @@ app.put('/tasks/:id', (req, res) => {
         const tasks = JSON.parse(data);
 
         const taskIndex = tasks.findIndex((task) => task.id === req.params.id);
-
-        console.log(taskIndex)
-        console.log(req.body)
 
         if (taskIndex === -1) {
             return req.status(404).json({ error: 'Task not found' });
@@ -78,8 +72,6 @@ app.put('/tasks/:id', (req, res) => {
             status: req.body.updatedTask.status,
             completed_at: new Date().toISOString()
         }
-
-        console.log(tasks[taskIndex])
 
         fs.writeFile('./tasks.json', JSON.stringify(tasks), 'utf8', err => {
             if (err) {
